@@ -1,0 +1,6 @@
+yt-dlp
+selenium
+pyperclip
+beautifulsoup4
+requests
+rich
