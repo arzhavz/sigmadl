@@ -19,7 +19,7 @@
 
 <h2>🪟 One-Click Convenience!</h2>
 
-<p>If you're using Windows, you don't need to install Python or set up dependencies manually. Just <strong><a href="/releases/tag/1.0.2.8">download the precompiled file</a></strong> from the latest release, it's a standalone executable!</p>
+<p>If you're using Windows, you don't need to install Python or set up dependencies manually. Just <strong><a href="https://github.com/arzhavz/sigmadl/releases/tag/1.0.2.8">download the precompiled file</a></strong> from the latest release, it's a standalone executable!</p>
 
 <p>Once downloaded, make sure <code>ffmpeg</code> is available in your system PATH. Then simply copy a YouTube or Instagram URL, run the Sigma Downloader.exe, and you're done. No setup. No fuss. Just a few clicks and your media is ready.</p>
 
