@@ -1,10 +1,25 @@
 # -*- coding: utf-8 -*-
-from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn, TimeElapsedColumn, TimeRemainingColumn
-from rich.text import Text
-from .components import HumanSizeColumn
+from rich.progress import (
+    Progress, 
+    SpinnerColumn, 
+    BarColumn, 
+    TextColumn, 
+    TimeElapsedColumn, 
+    TimeRemainingColumn
+)  
+
+from core.utils import human_readable_size
+
+
+class HumanSizeColumn(TextColumn):
+    def __init__(self):
+        super().__init__("{task.completed}") 
+    def render(self, task):
+        completed = task.completed or 0
+        total = task.total or 0
+        return f"[progress.completed][bright_black]{human_readable_size(int(completed))} / {human_readable_size(int(total))}[/]"
 
 def create_progress() -> Progress:
-    """Create a progress bar with custom columns."""
     return Progress(
         SpinnerColumn(style="bold bright_green", spinner_name="aesthetic"),
         BarColumn(bar_width=None, style="bright_green", complete_style="green"),

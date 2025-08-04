@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
+from bs4 import BeautifulSoup as Soup
+from time import sleep
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from bs4 import BeautifulSoup as soup
-from time import sleep
 
-class InstaDL:
-    """A class to download Instagram reels and photos using Selenium."""
+
+class InstagramScraper:
     def __init__(self):
         pass
 
     def _configure_chrome(self) -> webdriver.Chrome:
-        """Configures and returns a headless Chrome WebDriver."""
         chrome_options = Options()
         chrome_options.add_argument("headless")
         chrome_options.add_argument(
@@ -24,8 +24,7 @@ class InstaDL:
         chrome_options.add_experimental_option("useAutomationExtension", False)
         return webdriver.Chrome(options=chrome_options)
 
-    def _get_data(self, url) -> soup:
-        """Fetches the HTML content of the Instagram page and returns a BeautifulSoup object."""
+    def _get_data(self, url) -> Soup:
         driver = self._configure_chrome()
         try:
             driver.get("https://clipdown.app/en")
@@ -37,14 +36,11 @@ class InstaDL:
                 EC.visibility_of_element_located((By.CLASS_NAME, "download-box"))
             )
             html_source = driver.page_source
-            return soup(html_source, "html.parser")
-        except Exception as e:
-            raise e
+            return Soup(html_source, "html.parser")
         finally:
             driver.quit()
 
-    def Reel(self, url) -> dict:
-        """Downloads an Instagram reel from the provided URL."""
+    def get_reel(self, url) -> dict:
         data = self._get_data(url)
         res = []
         try:
@@ -55,8 +51,7 @@ class InstaDL:
         except AttributeError:
             return {"status": False, "url": res, "type": "reel"}
 
-    def Photo(self, url) -> dict:
-        """Downloads an Instagram photo from the provided URL."""
+    def get_photo(self, url) -> dict:
         data = self._get_data(url)
         res = []
         try:

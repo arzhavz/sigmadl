@@ -19,7 +19,7 @@
 
 <h2>🪟 One-Click Convenience!</h2>
 
-<p>If you're using Windows, you don't need to install Python or set up dependencies manually. Just <strong><a href="https://github.com/arzhavz/sigmadl/releases/tag/1.0.2.8">download the precompiled file</a></strong> from the latest release, it's a standalone executable!</p>
+<p>If you're using Windows, you don't need to install Python or set up dependencies manually. Just <strong><a href="https://github.com/arzhavz/sigmadl/releases/tag/1.0.3.1">download the precompiled file</a></strong> from the latest release, it's a standalone executable!</p>
 
 <p>Once downloaded, make sure <code>ffmpeg</code> is available in your system PATH. Then simply copy a YouTube or Instagram URL, run the Sigma Downloader.exe, and you're done. No setup. No fuss. Just a few clicks and your media is ready.</p>
 
@@ -73,6 +73,27 @@
   <li><strong>YouTube:</strong> Videos + Audio (up to 1080p MP4 + MP3)</li>
   <li><strong>Instagram Reels:</strong> Video files</li>
   <li><strong>Instagram Photos:</strong> Single or multiple images in one post</li>
+  <li><strong>TikTok:</strong> Video downloads (NEW)</li>
+  <li><strong>Facebook:</strong> Videos and Reels (NEW)</li>
+  <li><strong>Twitter/X:</strong> Video posts (NEW)</li>
+</ul>
+
+<hr>
+
+<h2>📝 Changelog</h2>
+
+<h3>v1.0.3.1 (Latest)</h3>
+<ul>
+  <li>🆕 Added support for <strong>TikTok</strong> video downloads</li>
+  <li>🆕 Added support for <strong>Facebook</strong> videos and reels</li>
+  <li>🆕 Added support for <strong>Twitter/X</strong> video downloads</li>
+  <li>🐞 Minor bug fixes, project restructuring, and performance improvements</li>
+</ul>
+
+<h3>v1.0.2.8</h3>
+<ul>
+  <li>✨ Initial release with support for YouTube and Instagram (Reels & Photos)</li>
+  <li>💡 Live logging, rich terminal UI, and organized downloads</li>
 </ul>
 
 <hr>
